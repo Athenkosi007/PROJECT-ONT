@@ -1,0 +1,6 @@
+F:\Properties\BLL\bin\Debug\BLL.dll
+F:\Properties\BLL\bin\Debug\BLL.pdb
+F:\Properties\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+F:\Properties\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+F:\Properties\BLL\obj\Debug\BLL.dll
+F:\Properties\BLL\obj\Debug\BLL.pdb
