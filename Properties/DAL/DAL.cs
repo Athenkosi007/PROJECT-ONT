@@ -28,6 +28,7 @@ namespace DAL
         public string AgencyName { get; set; }
         public int SurbubID { get; set; }
 
+    
     }
 
 
