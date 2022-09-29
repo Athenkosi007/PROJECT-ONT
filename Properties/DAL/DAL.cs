@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    //CLASSES 
     public class Cities //4
     {
         public int CityID { get; set; }
         public string CityDescription { get; set; }
         public int ProvinceID { get; set; }
-
+        
     }
     public class Surbub //5
     {
