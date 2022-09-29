@@ -10,3 +10,4 @@ C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007
 C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.dll
 C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.pdb
+C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
