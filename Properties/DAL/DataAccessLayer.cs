@@ -17,7 +17,8 @@ namespace DAL
         DataTable dt;
 
 
-        public int AddCity(Cities city)
+       
+        public int AddCity(Cities city) //4.Add
         {
             dbconn.Open();
             cmd = new SqlCommand("AddCity_sp", dbconn);
@@ -34,8 +35,104 @@ namespace DAL
             int x = cmd.ExecuteNonQuery();
             return x;
         }
+        public DataTable ListCity() //4 DISPLAY
+        {
+            dbconn.Open();
+            string sql = "ListCity_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            adapter = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dbconn.Close();
+            return dt;
+        }
+        public int AddSurbub(Surbub sub) //5.ADD
+        {
+            dbconn.Open();
+            cmd = new SqlCommand("AddSurbub_sp", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-        public int AddAgent(Agent age)
+            cmd.Parameters.AddWithValue("@SurbubID", sub.SurbubID);
+            cmd.Parameters.AddWithValue("@SurbubDescription", sub.SurbubDescription);
+            cmd.Parameters.AddWithValue("@PostalCode", sub.PostalCode);
+            cmd.Parameters.AddWithValue("@CityID", sub.CityID);
+
+            if (dbconn.State == ConnectionState.Closed)
+            {
+                dbconn.Open();
+            }
+
+            int x = cmd.ExecuteNonQuery();
+            return x;
+        }
+        public DataTable ListSurbub() //5.Dispaly
+        {
+            dbconn.Open();
+            string sql = "ListSurbub_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            adapter = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            //dgvList.DataSource = dt;
+            dbconn.Close();
+            return dt;
+        }
+        public int AddAgency(Agencies ag)//6.Add
+        {
+            dbconn.Open();
+            cmd = new SqlCommand("AddAgency_sp", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@AgencyID", ag.AgencyID);
+            cmd.Parameters.AddWithValue("@AgencyName", ag.AgencyName);
+            cmd.Parameters.AddWithValue("@SurbubID", ag.SurbubID);
+
+            if (dbconn.State == ConnectionState.Closed)
+            {
+                dbconn.Open();
+            }
+
+            int x = cmd.ExecuteNonQuery();
+            return x;
+        }
+        public DataTable ListAgency() //6.Dispaly
+        {
+            dbconn.Open();
+            string sql = "ListAgency_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            adapter = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            //dgvList.DataSource = dt;
+            dbconn.Close();
+            return dt;
+        }
+        public DataTable DeleteAgency(Agencies ag) //6.Delete
+        {
+            dbconn.Open();
+
+            string sql = "DeleteAgency_sp";
+
+            cmd = new SqlCommand(sql, dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("AgencyID", ag.AgencyID);
+
+            int x = cmd.ExecuteNonQuery();
+
+            adapter = new SqlDataAdapter(cmd);
+
+            dt = new DataTable();
+
+            adapter.Fill(dt);
+
+            //dgvList.DataSource = dt;
+
+            dbconn.Close();
+            return dt;
+        }
+
+        public int AddAgent(Agent age) //7 ADD
         {
             dbconn.Open();
             string sql = "AddAgent_sp";
