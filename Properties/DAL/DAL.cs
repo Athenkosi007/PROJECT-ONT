@@ -69,5 +69,20 @@ namespace DAL
         public string StartDate { get; set; }
         public string EndDate { get; set; }
     }
+    public class Property 
+    {
+        public  int PropertyID { get; set; }
+        public string Description { get; set; }
+        public float Price { get; set; }
+        public byte Image { get; set; }
+        public int PropertyType {get;set;}
+        public string Status { get; set;}
+        public int Surbub { get; set;}
+    }
+    public class PropertyType
+    {
+
+    }
+
 
 }

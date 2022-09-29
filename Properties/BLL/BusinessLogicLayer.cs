@@ -60,8 +60,7 @@ namespace BLL
         {
             return dal.cmbCity();
         }
-
- public int AddProperty(Property prop)
+        public int AddProperty(Property prop)
         {
             return dal.AddProperty(prop);
         }
