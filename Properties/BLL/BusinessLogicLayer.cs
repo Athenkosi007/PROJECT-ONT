@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
+using System.Data;
 
 namespace BLL
 {
-    public class BusinessLogicLayer
+    public class Class1
     {
-        public int AddProvince()
+        Information dal = new Information();
+        public int AddProvince(Information pro)
         {
-            return dal.AddProvince();
+            return dal.AddProvince(pro);
         }
-        public DataTable ListProvince() 
+        public DataTable ListProvince(Information pro)
         {
-            return dal.ListProvince();
+            return dal.ListProvince(pro);
         }
         public DataTable UpdateProvince()
         {
@@ -32,7 +35,7 @@ namespace BLL
         {
             return dal.UpdateCity(city);
         }
-        public  int AddSurbub(Surbub sub)
+        public int AddSurbub(Surbub sub)
         {
             return dal.AddSurbub(sub);
         }
@@ -74,7 +77,7 @@ namespace BLL
         }
         public DataTable DeleteProperty(Property prop)
         {
-           return dal.DeleteProperty(clas);
+            return dal.DeleteProperty(clas);
         }
     }
 }
