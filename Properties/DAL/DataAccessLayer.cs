@@ -29,7 +29,7 @@ namespace DAL
             {
                 dbconn.Close();
             }
-
+             
             int x = cmd.ExecuteNonQuery();
             return x;
         }
@@ -42,7 +42,6 @@ namespace DAL
 
             dt = new DataTable();
             adapter.Fill(dt);
-
             dbconn.Close();
             return dt;
         }
@@ -294,17 +293,17 @@ namespace DAL
             return dt;
         }
 
-        public int AddPropertyAgent()
+        public int AddPropertyAgent(Information info)
         {
             dbconn.Open();
             string sql = "AddPropertyAgent_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@PropertyID", propAgent.PropertyID);
-            cmd.Parameters.AddWithValue("@PrpertyAgentID", propAgent.PropertyAgentID);
-            cmd.Parameters.AddWithValue("Agent ID", propAgent.AgentID);
-            cmd.Parameters.AddWithValue("@Date", propAgent.date);
+            cmd.Parameters.AddWithValue("@PropertyID", info.FPropertyID);
+            cmd.Parameters.AddWithValue("@PrpertyAgentID", info.FPropertyAgentID);
+            cmd.Parameters.AddWithValue("Agent ID", info.FAgentID);
+            cmd.Parameters.AddWithValue("@Date", info.date);
 
             int x = cmd.ExecuteNonQuery();
             dbconn.Close();
@@ -327,18 +326,19 @@ namespace DAL
             return dt;
         }
 
-        public DataTable UpdatePropertyAgent()
+        public DataTable UpdatePropertyAgent(Information info)
         {
+
             dbconn.Open();
             string sql = "UpdatePropertyAgent_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@PropertyID", propAgent.PropertyID);
-            cmd.Parameters.AddWithValue("@PrpertyAgentID", propAgent.PropertyAgentID);
-            cmd.Parameters.AddWithValue("Agent ID", propAgent.AgentID);
+            cmd.Parameters.AddWithValue("@PropertyID", info.FPropertyID);
+            cmd.Parameters.AddWithValue("@PrpertyAgentID", info.FPropertyAgentID);
+            cmd.Parameters.AddWithValue("Agent ID", info.FAgentID);
 
-            cmd.Parameters.AddWithValue("@Date", propAgent.date);
+            cmd.Parameters.AddWithValue("@Date", info.date);
             adapter = new SqlDataAdapter(cmd);
             dt = new DataTable();
 
@@ -350,26 +350,24 @@ namespace DAL
             return dt;
         }
 
-        public int AddRental()
+        public int AddRental(Information info)
         {
             dbconn.Open();
             string sql = "AddRental_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@RentalID", rental.RentalID);
-            cmd.Parameters.AddWithValue("@PrpertyAgentID", rental.PropertyAgentID);
-            cmd.Parameters.AddWithValue("TenantID", rental.TenantID);
-
-            cmd.Parameters.AddWithValue("@StartDate", rental.StartDate);
-            cmd.Parameters.AddWithValue("@EndDate", rental.EndDate);
+            
+            cmd.Parameters.AddWithValue("@PrpertyAgentID", info.FPropertyAgentID);
+            cmd.Parameters.AddWithValue("TenantID", info.FTenantID);
+            cmd.Parameters.AddWithValue("@StartDate", info.StartDate);
+            cmd.Parameters.AddWithValue("@EndDate", info.EndDate);
 
             int x = cmd.ExecuteNonQuery();
             dbconn.Close();
 
             return x;
         }
-        public DataTable ListRental()
+        public DataTable ListRental(Information into)
         {
             dbconn.Open();
             string sql = "ListPropertyAgent_sp";
@@ -378,23 +376,21 @@ namespace DAL
 
             dt = new DataTable();
             adapter.Fill(dt);
-            //dgvList.DataSource = dt;
             dbconn.Close();
             return dt;
         }
-        public DataTable UpdateRental()
+        public DataTable UpdateRental(Information info)
         {
             dbconn.Open();
             string sql = "UpdateRental_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@RentalID", rent.RentalID);
-            cmd.Parameters.AddWithValue("@PrpertyAgentID", rent.PropertyAgentID);
-            cmd.Parameters.AddWithValue("TenantID", rent.TenantID);
-
-            cmd.Parameters.AddWithValue("@StartDate", rent.StartDate);
-            cmd.Parameters.AddWithValue("@EndDate", rent.EndDate);
+            cmd.Parameters.AddWithValue("@RentalID", info.RentalID);
+            cmd.Parameters.AddWithValue("@PrpertyAgentID", info.FPropertyAgentID);
+            cmd.Parameters.AddWithValue("TenantID", info.FTenantID);
+            cmd.Parameters.AddWithValue("@StartDate", info.StartDate);
+            cmd.Parameters.AddWithValue("@EndDate", info.EndDate);
             return dt;
         }
 
