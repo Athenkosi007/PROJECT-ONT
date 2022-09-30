@@ -52,10 +52,10 @@ namespace DAL
             cmd = new SqlCommand("AddSurbub_sp", dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@SurbubID", sub.SurbubID);
-            cmd.Parameters.AddWithValue("@SurbubDescription", sub.SurbubDescription);
-            cmd.Parameters.AddWithValue("@PostalCode", sub.PostalCode);
-            cmd.Parameters.AddWithValue("@CityID", sub.CityID);
+            cmd.Parameters.AddWithValue("@SurbubID", info.SurbubID);
+            cmd.Parameters.AddWithValue("@SurbubDescription", info.SurbubDescription);
+            cmd.Parameters.AddWithValue("@PostalCode", info.PostalCode);
+            cmd.Parameters.AddWithValue("@CityID", info.FCityID);
 
             if (dbconn.State == ConnectionState.Open)
             {
@@ -69,24 +69,27 @@ namespace DAL
         public DataTable ListSurbub() //5.Dispaly
         {
             dbconn.Open();
+
             string sql = "ListSurbub_sp";
             cmd = new SqlCommand(sql, dbconn);
             adapter = new SqlDataAdapter(cmd);
+
             dt = new DataTable();
             adapter.Fill(dt);
             //dgvList.DataSource = dt;
             dbconn.Close();
+
             return dt;
         }
-        public int AddAgency()//6.Add
+        public int AddAgency(Information info)//6.Add
         {
             dbconn.Open();
             cmd = new SqlCommand("AddAgency_sp", dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@AgencyID", ag.AgencyID);
-            cmd.Parameters.AddWithValue("@AgencyName", ag.AgencyName);
-            cmd.Parameters.AddWithValue("@SurbubID", ag.SurbubID);
+            cmd.Parameters.AddWithValue("@AgencyID", info.AgencyID);
+            cmd.Parameters.AddWithValue("@AgencyName", info.AgencyName);
+            cmd.Parameters.AddWithValue("@SurbubID", info.FagencySurbubID);
 
             if (dbconn.State == ConnectionState.Open)
             {
@@ -102,20 +105,22 @@ namespace DAL
             string sql = "ListAgency_sp";
             cmd = new SqlCommand(sql, dbconn);
             adapter = new SqlDataAdapter(cmd);
+
             dt = new DataTable();
             adapter.Fill(dt);
             //dgvList.DataSource = dt;
+
             dbconn.Close();
             return dt;
         }
-        public DataTable DeleteAgency() //6.Delete
+        public DataTable DeleteAgency(Information info) //6.Delete
         {
             dbconn.Open();
             string sql = "DeleteAgency_sp";
             cmd = new SqlCommand(sql, dbconn);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("AgencyID", ag.AgencyID);
+            cmd.Parameters.AddWithValue("AgencyID", info.AgencyID);
 
             int x = cmd.ExecuteNonQuery();
             adapter = new SqlDataAdapter(cmd);
@@ -128,22 +133,22 @@ namespace DAL
             return dt;
         }
 
-        public int AddAgent() //7 ADD
+        public int AddAgent(Information info) //7 ADD
         {
             dbconn.Open();
             string sql = "AddAgent_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
             
-            cmd.Parameters.AddWithValue("@Name", age.Name);
-            cmd.Parameters.AddWithValue("@Surname", age.Surname);
-            cmd.Parameters.AddWithValue("Agent ID", age.AgentID);
+            cmd.Parameters.AddWithValue("@Name", info.AgentName);
+            cmd.Parameters.AddWithValue("@Surname", info.AgentSurname);
+            cmd.Parameters.AddWithValue("Agent ID", info.FagencyID);
 
-            cmd.Parameters.AddWithValue("@Email", age.Email);
-            cmd.Parameters.AddWithValue("@Password", age.Password);
-            cmd.Parameters.AddWithValue("@Status", age.Status);
+            cmd.Parameters.AddWithValue("@Email", info.AgentEmail);
+            cmd.Parameters.AddWithValue("@Password", info.AgentPassword);
+            cmd.Parameters.AddWithValue("@Status", info.AgentStatus);
 
-            cmd.Parameters.AddWithValue("@Phone", age.Phone);
+            cmd.Parameters.AddWithValue("@Phone", info.AgentPhone);
             int x = cmd.ExecuteNonQuery();
             dbconn.Close();
 
@@ -153,31 +158,34 @@ namespace DAL
         public DataTable ListAgent()
         {
             dbconn.Open();
+
             string sql = "ListAgency_sp";
             cmd = new SqlCommand(sql, dbconn);
             adapter = new SqlDataAdapter(cmd);
+
             dt = new DataTable();
             adapter.Fill(dt);
             //dgvList.DataSource = dt;
             dbconn.Close();
+
             return dt;
         }
-        public DataTable UpdateAgent()
+        public DataTable UpdateAgent(Information info)
         {
             dbconn.Open();
             string sql = "UpdateAgent_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Name", age.Name);
-            cmd.Parameters.AddWithValue("@Surname", age.Surname);
-            cmd.Parameters.AddWithValue("Agent ID", age.AgentID);
+            cmd.Parameters.AddWithValue("@Name", info.AgentName);
+            cmd.Parameters.AddWithValue("@Surname", info.AgentSurname);
+            cmd.Parameters.AddWithValue("Agent ID", info.AgentID);
 
-            cmd.Parameters.AddWithValue("@Email", age.Email);
-            cmd.Parameters.AddWithValue("@Password", age.Password);
-            cmd.Parameters.AddWithValue("@Status", age.Status);
+            cmd.Parameters.AddWithValue("@Email", info.AgentEmail);
+            cmd.Parameters.AddWithValue("@Password", info.AgentPassword);
+            cmd.Parameters.AddWithValue("@Status", info.AgentStatus);
 
-            cmd.Parameters.AddWithValue("@Phone", age.Phone);
+            cmd.Parameters.AddWithValue("@Phone", info.AgentPhone);
             adapter = new SqlDataAdapter(cmd);
             dt = new DataTable();
 
@@ -188,14 +196,14 @@ namespace DAL
             return dt;
         }
 
-        public DataTable DeleteAgent()
+        public DataTable DeleteAgent(Information info)
         {
             dbconn.Open();
             string sql = "DeleteAgent_sp";
 
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Agent ID", age.AgentID);
+            cmd.Parameters.AddWithValue("@Agent ID", info.AgentID);
             
             int x = cmd.ExecuteNonQuery();
             adapter = new SqlDataAdapter(cmd);
@@ -208,23 +216,21 @@ namespace DAL
             return dt;
         }
 
-        public int AddTenant()
+        public int AddTenant(Information info)
         {
             dbconn.Open();
             string sql = "AddTenant_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.AddWithValue("@Name", info.TenantName);
+            cmd.Parameters.AddWithValue("@Surname", info.TenantSurname);
+            cmd.Parameters.AddWithValue("TenantID", info.FTenantID);
 
-
-            cmd.Parameters.AddWithValue("@Name", tenant.Name);
-            cmd.Parameters.AddWithValue("@Surname", tenant.Surname);
-            cmd.Parameters.AddWithValue("TenantID", tenant.TenantID);
-
-            cmd.Parameters.AddWithValue("@Email", tenant.Email);
-            cmd.Parameters.AddWithValue("@Password", tenant.Password);
-            cmd.Parameters.AddWithValue("@Status", tenant.Status);
-            cmd.Parameters.AddWithValue("@Phone", tenant.Phone);
+            cmd.Parameters.AddWithValue("@Email", info.TenantEmail);
+            cmd.Parameters.AddWithValue("@Password", info.TenantPassword);
+            cmd.Parameters.AddWithValue("@Status", info.TenantStatus);
+            cmd.Parameters.AddWithValue("@Phone", info.TenantPhone);
 
             int x = cmd.ExecuteNonQuery();
             dbconn.Close();
@@ -232,22 +238,22 @@ namespace DAL
             return x;
         }
 
-        public DataTable UpdateTenant()
+        public DataTable UpdateTenant(Information info)
         {
             dbconn.Open();
             string sql = "UpdateTenant_sp";
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Name", tenant.Name);
-            cmd.Parameters.AddWithValue("@Surname", tenant.Surname);
-            cmd.Parameters.AddWithValue("Tenant", tenant.TenantID);
+            cmd.Parameters.AddWithValue("@Name", info.TenantName);
+            cmd.Parameters.AddWithValue("@Surname", info.TenantSurname);
+            cmd.Parameters.AddWithValue("Tenant", info.FTenantID);
 
-            cmd.Parameters.AddWithValue("@Email", tenant.Email);
-            cmd.Parameters.AddWithValue("@Password", tenant.Password);
-            cmd.Parameters.AddWithValue("@Status", tenant.Status);
+            cmd.Parameters.AddWithValue("@Email", info.TenantEmail);
+            cmd.Parameters.AddWithValue("@Password", info.TenantPassword);
+            cmd.Parameters.AddWithValue("@Status", info.TenantStatus);
 
-            cmd.Parameters.AddWithValue("@Phone", tenant.Phone);
+            cmd.Parameters.AddWithValue("@Phone", info.TenantPhone);
             adapter = new SqlDataAdapter(cmd);
             dt = new DataTable();
 
@@ -273,14 +279,14 @@ namespace DAL
             return dt;
         }
 
-        public DataTable DeleteTenant()
+        public DataTable DeleteTenant(Information info)
         {
             dbconn.Open();
             string sql = "DeleteTenant_sp";
 
             cmd = new SqlCommand(sql, dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("TenantID", tenant.TenantID);
+            cmd.Parameters.AddWithValue("TenantID", info.TenantID);
 
             int x = cmd.ExecuteNonQuery();
             adapter = new SqlDataAdapter(cmd);
