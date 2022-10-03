@@ -1,2 +1,4 @@
 C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
 C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache

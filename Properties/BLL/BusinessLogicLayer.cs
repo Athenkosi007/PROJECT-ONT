@@ -10,19 +10,17 @@ namespace BLL
 {
     public class Class1
     {
-        Information dal = new Information();
+       //Information pro = new Information();
+        DataAccessLayer dal = new DataAccessLayer();
         public int AddProvince(Information pro)
         {
             return dal.AddProvince(pro);
         }
-        public DataTable ListProvince(Information pro)
+        public DataTable listProvince()
         {
-            return dal.ListProvince(pro);
+            return dal.listProvince();
         }
-        public DataTable UpdateProvince(Information pro)
-        {
-            return dal.UpdateProvince(pro);
-        }
+       
         public int AddCity(Information pro)
         {
             return dal.AddCity(pro);
@@ -31,10 +29,10 @@ namespace BLL
         {
             return dal.ListCity();
         }
-        public DataTable UpdateCity(Information pro)
-        {
-            return dal.UpdateCity(pro);
-        }
+        //public DataTable UpdateCity(Information pro)
+        //{
+        //    return dal.UpdateCity(pro);
+        //}
         public int AddSurbub(Information pro)
         {
             return dal.AddSurbub(pro);
@@ -43,33 +41,33 @@ namespace BLL
         {
             return dal.ListSurbub();
         }
-        public DataTable DeleteSurbub(Information pro)
-        {
-            return dal.DeleteSurbub(pro);
-        }
-        public DataTable cmbSurbub(Information pro)
-        {
-            return dal.cmbSurbub(pro);
-        }
-        public DataTable cmbProvince(Information pro)
-        {
-            return dal.cmbProvince(pro);
-        }
-        public DataTable cityReport(Information pro)
-        {
-            return dal.cityReport(pro);
-        }
-        public DataTable cmbCity(Information pro)
-        {
-            return dal.cmbCity(pro);
-        }
+        //public DataTable DeleteSurbub(Information pro)
+        //{
+        //    return dal.DeleteSurbub(pro);
+        //}
+        //public DataTable cmbSurbub(Information pro)
+        //{
+        //    return dal.cmbSurbub(pro);
+        //}
+        //public DataTable cmbProvince(Information pro)
+        //{
+        //    return dal.cmbProvince(pro);
+        //}
+        //public DataTable cityReport(Information pro)
+        //{
+        //    return dal.cityReport(pro);
+        //}
+        //public DataTable cmbCity(Information pro)
+        //{
+        //    return dal.cmbCity(pro);
+        //}
         public int AddProperty(Information pro)
         {
             return dal.AddProperty(pro);
         }
-        public DataTable ListProperty()
+        public DataTable listProperty()
         {
-            return dal.ListProperty();
+            return dal.listProperty();
         }
         public DataTable UpdatePropety(Information pro)
         {

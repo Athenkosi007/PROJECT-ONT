@@ -10,18 +10,134 @@ namespace DAL
 {
     public class DataAccessLayer
     {
-        static string connString = @"Data Source=localhost; Initial Catalog = records; Integrated Security = True;";
+        static string connString = @"Data Source=localhost; Initial Catalog = RentalDB; Integrated Security = True;";
         SqlConnection dbconn = new SqlConnection(connString);
         SqlCommand cmd;
         SqlDataAdapter adapter;
         DataTable dt;
 
+        public int AddPropertyType(Information info)
+        {
+            dbconn.Open();
+            cmd = new SqlCommand("AddPropertyType_sp", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@propertyTypeDescription", info.PropertyTypeDescription);
+
+            if (dbconn.State == ConnectionState.Open)
+            {
+                dbconn.Close();
+            }
+
+            int x = cmd.ExecuteNonQuery();
+            return x;
+        }
+        public DataTable listPropertyType()
+        {
+            dbconn.Open();
+            string sql = "ListPropertyType_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            adapter = new SqlDataAdapter(cmd);
+
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dbconn.Close();
+            return dt;
+        }
+        public int AddProperty(Information info)
+        {
+            dbconn.Open();
+            string sql = "AddTenant_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@", info.PropertyDescription);
+            cmd.Parameters.AddWithValue("@", info.PropertyPrice);
+            cmd.Parameters.AddWithValue("@", info.PropertyImage);
+
+            cmd.Parameters.AddWithValue("@", info.FPropertyTypeID);
+            cmd.Parameters.AddWithValue("@", info.PropertyStatus);
+            cmd.Parameters.AddWithValue("@", info.FpropertySurbubID);
+            int x = cmd.ExecuteNonQuery();
+            dbconn.Close();
+            return x;
+        }
+        public DataTable listProperty()
+        {
+            dbconn.Open();
+            string sql = "ListProperty_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            adapter = new SqlDataAdapter(cmd);
+
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dbconn.Close();
+            return dt;
+        }
+        public DataTable UpdateProperty(Information info)
+        {
+            dbconn.Open();
+            string sql = "AddTenant_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@", info.PropertyID);
+            cmd.Parameters.AddWithValue("@", info.PropertyDescription);
+            cmd.Parameters.AddWithValue("@", info.PropertyPrice);
+            cmd.Parameters.AddWithValue("@", info.PropertyImage);
+            cmd.Parameters.AddWithValue("@", info.FPropertyTypeID);
+            cmd.Parameters.AddWithValue("@", info.PropertyStatus);
+            cmd.Parameters.AddWithValue("@", info.FpropertySurbubID);
+            int x = cmd.ExecuteNonQuery();
+            dbconn.Close();
+            return dt;
+        }
+        public DataTable DeleteProperty(Information info)
+        {
+            dbconn.Open();
+            string sql = "DeleteProperty_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@PropertyID", info.PropertyID);
+            int x = cmd.ExecuteNonQuery();
+            adapter = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dbconn.Close();
+            return dt;
+        }
+        public int AddProvince(Information info) 
+        {
+            dbconn.Open();
+            cmd = new SqlCommand("AddProvince_sp", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ProvinceDescription", info.ProvDescription);
+
+            if (dbconn.State == ConnectionState.Open)
+            {
+                dbconn.Close();
+            }
+
+            int x = cmd.ExecuteNonQuery();
+            return x;
+        }
+        public DataTable listProvince() 
+        {
+            dbconn.Open();
+            string sql = "ListProperty_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            adapter = new SqlDataAdapter(cmd);
+
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dbconn.Close();
+           
+            return dt;
+        }
         public int AddCity(Information info) //4.Add
         {
             dbconn.Open();
             cmd = new SqlCommand("AddCity_sp", dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
-
             cmd.Parameters.AddWithValue("@CityDescription", info.CityDescription);
             cmd.Parameters.AddWithValue("@Province", info.ProvinceID);
 
@@ -39,7 +155,6 @@ namespace DAL
             string sql = "ListCity_sp";
             cmd = new SqlCommand(sql, dbconn);
             adapter = new SqlDataAdapter(cmd);
-
             dt = new DataTable();
             adapter.Fill(dt);
             dbconn.Close();
@@ -51,7 +166,6 @@ namespace DAL
             dbconn.Open();
             cmd = new SqlCommand("AddSurbub_sp", dbconn);
             cmd.CommandType = CommandType.StoredProcedure;
-
             cmd.Parameters.AddWithValue("@SurbubID", info.SurbubID);
             cmd.Parameters.AddWithValue("@SurbubDescription", info.SurbubDescription);
             cmd.Parameters.AddWithValue("@PostalCode", info.PostalCode);

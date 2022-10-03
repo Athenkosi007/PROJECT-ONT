@@ -38,3 +38,23 @@ C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007
 C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.csproj.CoreCompileInputs.cache
 C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.exe
 C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.pdb
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\Properties.exe.config
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\Properties.exe
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\Properties.pdb
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.csproj.AssemblyReference.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.csproj.SuggestedBindingRedirects.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Agency.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Agent.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.City.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Properties.Resources.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Property.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.PropertyAgent.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.PropertyType.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Province.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Rental.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Surbub.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Tenant.resources
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.csproj.GenerateResource.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.csproj.CoreCompileInputs.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.exe
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.pdb

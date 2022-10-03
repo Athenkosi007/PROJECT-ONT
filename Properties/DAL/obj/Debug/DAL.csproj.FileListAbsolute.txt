@@ -4,3 +4,9 @@ C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Athenkosi00
 C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.dll
 C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Athenkosi007\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.pdb
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\bin\Debug\DAL.dll
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\bin\Debug\DAL.pdb
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.dll
+C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.pdb
