@@ -132,7 +132,7 @@ namespace _3_TIER_PRAC_1
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            bool validated = true;
+            bool validated = true; 
             //info = new Information(txtPassWord.Text, txtUserName.Text);
 
             if (!Regex.IsMatch(txtPassWord.Text, "@^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$"))
