@@ -16,7 +16,7 @@ namespace DAL
         SqlDataAdapter adapter;
         DataTable dt;
 
-        public int AddPropertyType(Information info)
+        public int AddPropertyType(Information info)//1 Add
         {
             dbconn.Open();
             cmd = new SqlCommand("AddPropertyType_sp", dbconn);
@@ -32,13 +32,40 @@ namespace DAL
             int x = cmd.ExecuteNonQuery();
             return x;
         }
-        public DataTable listPropertyType()
+        public DataTable listPropertyType()//1 Display
         {
             dbconn.Open();
             string sql = "ListPropertyType_sp";
             cmd = new SqlCommand(sql, dbconn);
             adapter = new SqlDataAdapter(cmd);
 
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dbconn.Close();
+            return dt;
+        }
+        public DataTable UpdatePropertyType(Information info)//1 update
+        {
+            cmd = new SqlCommand("AddPropertyType_sp", dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@propertyTypeDescription", info.PropertyTypeDescription);
+            adapter = new SqlDataAdapter(cmd);
+
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dbconn.Close();
+            return dt;
+        }
+        public DataTable DeletePropertyType(Information info)//1 hardDelete
+        {
+            dbconn.Open();
+            string sql = "DeletePropertyType_sp";
+            cmd = new SqlCommand(sql, dbconn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@PropertyID", info.PropertyTypeID);
+            int x = cmd.ExecuteNonQuery();
+            adapter = new SqlDataAdapter(cmd);
             dt = new DataTable();
             adapter.Fill(dt);
             dbconn.Close();
