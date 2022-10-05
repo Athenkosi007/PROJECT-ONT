@@ -114,6 +114,12 @@
     <Compile Include="Tenant.Designer.cs">
       <DependentUpon>Tenant.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucProvince.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProvince.Designer.cs">
+      <DependentUpon>ucProvince.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Agency.resx">
       <DependentUpon>Agency.cs</DependentUpon>
     </EmbeddedResource>
