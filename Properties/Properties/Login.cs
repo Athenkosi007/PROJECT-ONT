@@ -18,6 +18,7 @@ namespace _3_TIER_PRAC_1
         }
         DataAccessLayer dal = new DataAccessLayer();
         BusinessLogicLayer bll = new BusinessLogicLayer();
+
         Information info;
         int count = 3, Timer = 0;
 
@@ -75,19 +76,17 @@ namespace _3_TIER_PRAC_1
             {
                 //DataTable x = bll.LOGINUSER(info);
 
-                if (x.Rows.Count > 0)
-                {
-                    MessageBox.Show("WELCOME: " + x.Rows[0]["USERNAME"].ToString());
-                    btnLogin.ForeColor = Color.Green;
-
-                    MENU m = new MENU();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("USER ACCOUNT DOES NOT EXIST");
-                    Console.Beep();
-                }
+                //if (x.Rows.Count > 0)
+                //{
+                //    MessageBox.Show("WELCOME: " + x.Rows[0]["USERNAME"].ToString());
+                //    btnLogin.ForeColor = Color.Green;
+                   
+                //}
+                //else
+                //{
+                //    MessageBox.Show("USER ACCOUNT DOES NOT EXIST");
+                //    Console.Beep();
+                //}
             }
             else
             {
@@ -134,7 +133,7 @@ namespace _3_TIER_PRAC_1
         private void btnReg_Click(object sender, EventArgs e)
         {
             bool validated = true;
-            info = new Information(txtPassWord.Text, txtUserName.Text);
+            //info = new Information(txtPassWord.Text, txtUserName.Text);
 
             if (!Regex.IsMatch(txtPassWord.Text, "@^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$"))
             {
@@ -170,16 +169,16 @@ namespace _3_TIER_PRAC_1
 
             if (validated == true)
             {
-                int x = bll.INSERTUSER(info);
+                //int x = bll.INSERTUSER(info);
 
-                if (x > 0)
-                {
-                    MessageBox.Show("ACCOUNT CREATED");
-                }
-                else
-                {
-                    Console.Beep();
-                }
+                //if (x > 0)
+                //{
+                //    MessageBox.Show("ACCOUNT CREATED");
+                //}
+                //else
+                //{
+                //    Console.Beep();
+                //}
             }
             else
             {

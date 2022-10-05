@@ -10,3 +10,9 @@ C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.csproj
 C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.dll
 C:\Users\s224378449\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.pdb
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\DAL\bin\Debug\DAL.dll
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\DAL\bin\Debug\DAL.pdb
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.dll
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\DAL\obj\Debug\DAL.pdb

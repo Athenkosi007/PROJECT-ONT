@@ -63,7 +63,6 @@ C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Propertie
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Agency.resources
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Agent.resources
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.City.resources
-C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Login.resources
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Properties.Resources.resources
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.Property.resources
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.PropertyAgent.resources
@@ -76,3 +75,10 @@ C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Propertie
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.exe
 C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.pdb
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\_3_TIER_PRAC_1.Login.resources
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\Properties.exe.config
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\Properties.exe
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\Properties.pdb
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\DAL.dll
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\bin\Debug\DAL.pdb
+C:\Users\User\Source\Repos\PROJECT-ONT\Properties\Properties\obj\Debug\Properties.csproj.CopyComplete
