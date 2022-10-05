@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Properties;
 
 namespace Properties
 {
@@ -16,7 +17,7 @@ namespace Properties
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Property());
+            Application.Run(new Login());
         }
     }
 }
