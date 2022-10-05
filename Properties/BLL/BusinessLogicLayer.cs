@@ -11,7 +11,7 @@ namespace BLL
     public class BusinessLogicLayer
     {
         DataAccessLayer dal = new DataAccessLayer();
-
+        
         public int AddPropertyType(Information info)/*1.MANAGE PROPERTY TYPE(ADD, DISPLAY, UPDATE AND DELETE)*/
         {
             return dal.AddPropertyType(info);
@@ -20,11 +20,13 @@ namespace BLL
         {
             return dal.listPropertyType();
         }
-        public int UpdatePropertyType(Information info)/*1UPDATE PROPERTY TYPE*/
+        public DataTable UpdatePropertyType(Information info)/*1UPDATE PROPERTY TYPE*/
         {
-            //MISSING METHOD IN THE DAL
-            //return dal.; 
-            return -1;
+            return dal.UpdatePropertyType(info);
+        }
+        public DataTable DeletePropertyType(Information info) 
+        { 
+            return dal.DeletePropertyType(info); 
         }
         public int AddProperty(Information info)/*2MANAGE PROPERTY(ADD AND DISPLAY)*/
         {
